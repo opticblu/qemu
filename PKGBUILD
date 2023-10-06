@@ -116,7 +116,7 @@ prepare() {
   qemu_tablet_vendor="Wacom"
   qemu_tablet_name="Wacom Tablet"
   cpu_brand=$(grep -m 1 'vendor_id' /proc/cpuinfo | cut -c13-)
-  cpu_speed=$(dmidecode | grep "Current Speed:" | cut -d" " -f3)
+  cpu_speed="3600"
 
   sed -i "s/\"BOCHS \"/\"$qemu_bios_string1\"/"                                             ./include/hw/acpi/aml-build.h
   sed -i "s/\"BXPC    \"/\"$qemu_bios_string2\"/"                                           ./include/hw/acpi/aml-build.h
