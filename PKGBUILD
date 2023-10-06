@@ -108,7 +108,7 @@ prepare() {
   
   qemu_motherboard_bios_vendor="AMI"
   qemu_bios_string1="ALASKA"
-  qemu_bios_string2="ASPC4231" # Must be 8 chars
+  qemu_bios_string2="ASPC4541" # Must be 8 chars PROBABLY CHANGE THIS
   qemu_disk_vendor="Western Digital Technologies, Inc."
   qemu_disk_name="WDC WD10JPVX-22JC3T0"
   qemu_cd_vendor="ASUS"
@@ -116,7 +116,7 @@ prepare() {
   qemu_tablet_vendor="Wacom"
   qemu_tablet_name="Wacom Tablet"
   cpu_brand=$(grep -m 1 'vendor_id' /proc/cpuinfo | cut -c13-)
-  cpu_speed="3600"
+  cpu_speed=$(dmidecode | grep "Current Speed:" | cut -d" " -f3)
 
   sed -i "s/\"BOCHS \"/\"$qemu_bios_string1\"/"                                             ./include/hw/acpi/aml-build.h
   sed -i "s/\"BXPC    \"/\"$qemu_bios_string2\"/"                                           ./include/hw/acpi/aml-build.h
