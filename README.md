@@ -2,6 +2,10 @@ makepkg -si
 
 Probably change line 111 to something unique, who really knows though
 
+Change cpu_speed on line 119 to the number that comes out when you run this:
+sudo dmidecode | grep "Current Speed:" | cut -d" " -f3
+
+
 Install will fail at the end due to conflicts
 
 Manually install output files:
