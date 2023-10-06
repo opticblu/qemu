@@ -1,5 +1,7 @@
 makepkg -si
 
+Probably change line 111 to something unique, who really knows though
+
 Install will fail at the end due to conflicts
 
 Manually install output files:
