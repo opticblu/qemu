@@ -1,3 +1,5 @@
+sudo pacman -S --needed git make ninja nasm iasl pkg-config spice-protocol dmidecode
+
 makepkg -si
 
 Probably change line 111 to something unique, who really knows though
